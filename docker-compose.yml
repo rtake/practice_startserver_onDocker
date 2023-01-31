@@ -1,0 +1,25 @@
+version: "2"
+services:
+  db: # db server
+    build:
+      context: db
+    networks:
+      - default
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+  app_server: # ap server
+    build:
+      context: app_server
+    links:
+      - db
+    networks:
+      - default
+  web_server: # web server
+    build:
+      context: web_server
+    links:
+      - app_server
+    ports:
+      - "80:80"
+    networks:
+      - default
