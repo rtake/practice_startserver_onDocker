@@ -2,3 +2,5 @@
     * DB:MySQL
     * AP:Python(Flask) <― あんまりわかっていない Goで書き換えてみたい
     * WEB:nginx
+
+* [2023/02/08] https://efrat.dev/golang-docker-nginx/ を参考に Go+nginx でサーバ構築
