@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+  app_server_go:
+    build: "./app_server_go"
+    expose:
+      - "8080"
+
+  web_server4go:
+    build: "./web_server4go"
+    ports:
+      - "80:80"  
+    depends_on:
+      - "app_server_go"
